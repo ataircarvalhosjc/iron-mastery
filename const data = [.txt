@@ -1,0 +1,31 @@
+const data = [
+    // INFERIORES
+    { n: 'Abdução de Quadril', f: 'Abduçao de quadril em pé.gif', c: 'Inferior' },
+    { n: 'Adução na Polia', f: 'Adução na polia.gif', c: 'Inferior' },
+    { n: 'Adutora Cross', f: 'adutora na tração do cabo cross.gif', c: 'Inferior' },
+    { n: 'Afundo Livre', f: 'afundo livre.gif', c: 'Inferior' },
+    { n: 'Agachamento Barra', f: 'agachamento barra.gif', c: 'Inferior' },
+    { n: 'Agachamento Búlgaro', f: 'agachamento bulgaro.gif', c: 'Inferior' },
+    { n: 'Agachamento Pés Juntos', f: 'agachamento livre pés juntos.gif', c: 'Inferior' },
+
+    // PEITO
+    { n: 'Supino Reto Cross', f: 'supino reto  no cross.gif', c: 'Peito' },
+    { n: 'Supino Inclinado Smith', f: 'supino inclinado banco no smith.gif', c: 'Peito' },
+    { n: 'Supino Declinado', f: 'supino declinado barra.gif', c: 'Peito' },
+
+    // COSTAS
+    { n: 'Remada Curvada', f: 'Remanda Curvada Barra.gif', c: 'Costas' },
+    { n: 'Remada Serrote', f: 'remada serrote.gif', c: 'Costas' },
+    { n: 'Remada Unilateral', f: 'Remanda unil com apoio banco.gif', c: 'Costas' },
+
+    // BRAÇOS E OMBROS
+    { n: 'Rosca Direta Cross', f: 'rosca direta no cross barra W.gif', c: 'Bíceps' },
+    { n: 'Tríceps Testa', f: 'triceps testa com barra.gif', c: 'Tríceps' },
+    { n: 'Elevação Lateral', f: 'elevação letaral com haltrers.gif', c: 'Ombro' },
+    { n: 'Flexão de Punho', f: 'Flexão de punho com halteres.gif', c: 'Antebraço' },
+
+    // TRAPÉZIO E CORE
+    { n: 'Encolhimento Smith', f: 'encolhimento no smith.gif', c: 'Trapézio' },
+    { n: 'Abdominal com Carga', f: 'Abdominal com Carga.gif', c: 'Core' },
+    { n: 'Abd Concentrado', f: 'Abdominal Concentrado.gif', c: 'Core' }
+];
