@@ -258,7 +258,30 @@
         cursor: not-allowed; 
         transform: none; 
     }
-</style>
+.set-check {
+            width: 35px; height: 35px; 
+            border: 2px solid var(--primary); 
+            border-radius: 8px; 
+            cursor: pointer;
+            display: inline-block;
+            transition: 0.2s;
+            position: relative;
+        }
+        .set-check.checked {
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+        .set-check.checked::after {
+            content: '✓';
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
 
@@ -296,6 +319,8 @@
         <h2 id="m-name" style="color: var(--primary); margin-bottom: 15px;"></h2>
         <img id="m-img" src="" alt="Execução">
         <div id="m-reps" style="margin-top: 15px; font-size: 1.2rem; border: 1px solid #444; padding: 10px;"></div>
+        <div id="m-checks" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;"></div>
+        <button class="btn-rest" style="background:#333; margin-top:15px; box-shadow:none; width: 100%; border: 1px solid #555;" id="btn-add-custom" onclick="addToCustom()">⭐ ADICIONAR AO MEU TREINO</button>
         <div class="timer-box" id="timer">00:45</div>
         <button class="btn-rest" id="btn-timer" onclick="startRest()">INICIAR DESCANSO</button>
     </div>
@@ -1734,11 +1759,74 @@
         });
     }
 
+        let currentEx = null;
+    let myWorkout = JSON.parse(localStorage.getItem('myWorkout') || '[]');
+
+    function addToCustom() {
+        if(currentEx) {
+            if(!myWorkout.find(e => e.n === currentEx.n)) {
+                myWorkout.push(currentEx);
+                localStorage.setItem('myWorkout', JSON.stringify(myWorkout));
+                alert(currentEx.n + ' adicionado ao seu treino!');
+            } else {
+                alert('Este exercício já está no seu treino!');
+            }
+        }
+    }
+
+    function removeFromCustom(exName, event) {
+        if(event) event.stopPropagation();
+        myWorkout = myWorkout.filter(e => e.n !== exName);
+        localStorage.setItem('myWorkout', JSON.stringify(myWorkout));
+        showCustomWorkout(document.querySelector('.tab-btn[onclick*="showCustom"]'));
+    }
+
+    function showCustomWorkout(btn) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        if(btn) btn.classList.add('active');
+        const grid = document.getElementById('grid');
+        grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px; padding: 20px; background: var(--card); border-radius: var(--radius); border: 1px solid var(--primary);">
+                <h2 style="color: var(--primary); margin: 0; font-weight: 900; font-size: 1.8rem;">⭐ Meu Treino Personalizado</h2>
+                <p style="color: #ddd; margin: 5px 0 0 0; font-size: 1.2rem;">Crie e acesse sua própria lista</p>
+            </div>`;
+        
+        if(myWorkout.length === 0) {
+            grid.innerHTML += `<p style="grid-column: 1 / -1; text-align: center; color: #888; font-size:1.1rem; padding: 20px;">Abra algum exercício e clique em 'ADICIONAR AO MEU TREINO' para ele aparecer aqui.</p>`;
+            return;
+        }
+
+        myWorkout.forEach(ex => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.position = 'relative';
+            card.innerHTML = `<button onclick="removeFromCustom('${ex.n}', event)" style="position:absolute; top:-10px; right:-10px; background: #e60000; color:white; border:none; border-radius:50%; width:30px; height:30px; font-weight:bold; cursor:pointer; z-index: 10;" title="Remover">X</button><strong>${ex.n}</strong>`;
+            card.onclick = () => openModal(ex);
+            grid.appendChild(card);
+        });
+    }
+
     function openModal(ex) {
+        currentEx = ex;
         const goal = document.getElementById('goal').value;
         document.getElementById('m-name').innerText = ex.n;
         document.getElementById('m-img').src = `./assets/exercises/${ex.f}`;
-        document.getElementById('m-reps').innerText = goal === 'hipertrofia' ? "SUGESTÃO: 4 x 10 REPS" : (goal === 'queima' ? "SUGESTÃO: 4 x 20 REPS" : "SUGESTÃO: 5 x 5 REPS");
+        
+        let sets = 4;
+        let desc = "SUGESTÃO: 4 x 10 REPS";
+        if(goal === 'queima') { sets = 4; desc = "SUGESTÃO: 4 x 20 REPS"; }
+        else if(goal === 'forca') { sets = 5; desc = "SUGESTÃO: 5 x 5 REPS"; }
+        
+        document.getElementById('m-reps').innerText = desc;
+        
+        const checksC = document.getElementById('m-checks');
+        checksC.innerHTML = '';
+        for(let i=0; i<sets; i++) {
+            let chk = document.createElement('div');
+            chk.className = 'set-check';
+            chk.onclick = function() { this.classList.toggle('checked'); };
+            checksC.appendChild(chk);
+        }
+        
         document.getElementById('modal').style.display = 'flex';
     }
 
