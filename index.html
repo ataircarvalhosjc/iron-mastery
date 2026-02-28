@@ -1,276 +1,321 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Mastery | Atair Carvalho</title>
+    <title>JP Espaço Fitness</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap');
-    
-    :root { 
-        --primary: #f21313; 
-        --primary-glow: rgba(242, 19, 19, 0.4);
-        --bg: #050505; 
-        --card: rgba(20, 20, 20, 0.7); 
-        --text: #ffffff; 
-        --text-muted: #aaaaaa;
-        --border: rgba(255, 255, 255, 0.08);
-        --radius: 16px;
-    }
-    
-    body { 
-        background: var(--bg);
-        background-image: 
-            radial-gradient(circle at 50% 0%, rgba(60, 0, 0, 0.25) 0%, transparent 60%),
-            radial-gradient(circle at 0% 100%, rgba(30, 0, 0, 0.2) 0%, transparent 50%);
-        color: var(--text); 
-        font-family: 'Outfit', sans-serif; 
-        margin: 0; 
-        padding-bottom: 50px; 
-        min-height: 100vh;
-    }
-    
-    header { 
-        background: rgba(5, 5, 5, 0.6);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        padding: 30px; 
-        text-align: center; 
-        border-bottom: 1px solid var(--border); 
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-    
-    .logo { 
-        font-size: 2.5rem; 
-        font-weight: 900; 
-        letter-spacing: 6px; 
-        background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-transform: uppercase; 
-        text-shadow: 0 0 20px rgba(242,19,19,0.2);
-    }
-    
-    .selector-box { 
-        background: var(--card);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 25px; 
-        margin: 30px auto; 
-        border-radius: var(--radius); 
-        border: 1px solid var(--border); 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        gap: 15px; 
-        max-width: 600px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    }
-    
-    .selector-box strong { font-weight: 500; font-size: 1.1rem; letter-spacing: 1px; color: #ddd; }
-    
-    select { 
-        background: rgba(10, 10, 10, 0.8); 
-        color: var(--text); 
-        border: 1px solid var(--border); 
-        padding: 14px 20px; 
-        border-radius: 10px; 
-        font-size: 1.1rem; 
-        width: 100%; 
-        max-width: 320px;
-        font-family: 'Outfit', sans-serif;
-        outline: none;
-        cursor: pointer;
-        transition: all 0.3s;
-        text-align: center;
-        appearance: none;
-    }
-    select:focus { border-color: var(--primary); box-shadow: 0 0 20px var(--primary-glow); }
-    select option { background: #111; color: white; }
-    
-    .nav-tabs { 
-        display: flex; 
-        overflow-x: auto; 
-        gap: 12px; 
-        padding: 10px 20px; 
-        scrollbar-width: none; 
-        max-width: 1000px;
-        margin: 0 auto 30px;
-    }
-    .nav-tabs::-webkit-scrollbar { display: none; }
-    
-    .tab-btn { 
-        background: var(--card); 
-        color: var(--text-muted); 
-        border: 1px solid var(--border); 
-        padding: 12px 28px; 
-        border-radius: 50px; 
-        cursor: pointer; 
-        white-space: nowrap; 
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-        font-family: 'Outfit', sans-serif;
-        font-weight: 500;
-        font-size: 0.95rem;
-    }
-    .tab-btn:hover { background: rgba(50,50,50,0.4); color: white; transform: translateY(-2px); }
-    .tab-btn.active { 
-        background: var(--primary); 
-        color: white; 
-        border-color: var(--primary); 
-        box-shadow: 0 5px 20px var(--primary-glow); 
-        font-weight: 700;
-    }
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap');
 
-    .exercise-grid { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-        gap: 20px; 
-        padding: 20px; 
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .card { 
-        background: var(--card); 
-        backdrop-filter: blur(10px);
-        padding: 25px 15px; 
-        border-radius: var(--radius); 
-        text-align: center; 
-        border: 1px solid var(--border); 
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        cursor: pointer; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 80px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    
-    .card strong { font-weight: 500; font-size: 1.05rem; line-height: 1.4; color: #eee; }
-    
-    .card:hover { 
-        border-color: var(--primary); 
-        transform: translateY(-8px); 
-        box-shadow: 0 15px 30px rgba(242, 19, 19, 0.15); 
-        background: rgba(30, 20, 20, 0.8);
-    }
+        :root {
+            --primary: #00FF33;
+            --primary-glow: rgba(0, 255, 51, 0.4);
+            --bg: #050505;
+            --card: rgba(20, 20, 20, 0.7);
+            --text: #ffffff;
+            --text-muted: #aaaaaa;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 16px;
+        }
 
-    .modal { 
-        display: none; 
-        position: fixed; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        background: rgba(0,0,0,0.85); 
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        z-index: 1000; 
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: center; 
-        animation: fadeIn 0.3s ease;
-    }
-    
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body {
+            background: var(--bg);
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(0, 60, 20, 0.25) 0%, transparent 60%),
+                radial-gradient(circle at 0% 100%, rgba(0, 30, 10, 0.2) 0%, transparent 50%);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding-bottom: 50px;
+            min-height: 100vh;
+        }
 
-    .modal-content { 
-        width: 90%; 
-        max-width: 500px; 
-        text-align: center; 
-        background: #0f0f0f;
-        padding: 35px;
-        border-radius: 24px;
-        border: 1px solid var(--border);
-        box-shadow: 0 30px 60px -15px rgba(0,0,0,0.6);
-        position: relative;
-    }
-    
-    .modal img { 
-        width: 100%; 
-        border-radius: 16px; 
-        border: 1px solid #333; 
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        margin-bottom: 10px;
-    }
-    
-    .close { 
-        position: absolute; 
-        top: 20px; 
-        right: 25px; 
-        font-size: 45px; 
-        color: #fff; 
-        background: rgba(255, 30, 30, 0.8);
-        width: 50px;
-        height: 50px;
-        line-height: 45px;
-        border-radius: 50%;
-        cursor: pointer; 
-        transition: 0.3s;
-        opacity: 0.9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        z-index: 1010;
-    }
-    .close:hover { opacity: 1; background: var(--primary); transform: scale(1.1); }
-    
-    .timer-box { 
-        margin-top: 25px; 
-        font-size: 3rem; 
-        color: var(--primary); 
-        font-weight: 900; 
-        letter-spacing: 2px;
-        font-variant-numeric: tabular-nums;
-        text-shadow: 0 0 15px var(--primary-glow);
-    }
-    
-    .btn-rest { 
-        background: linear-gradient(135deg, #f21313, #a00000); 
-        color: white; 
-        border: none; 
-        padding: 16px 45px; 
-        border-radius: 50px; 
-        font-size: 1.1rem; 
-        font-weight: 700;
-        cursor: pointer; 
-        margin-top: 20px; 
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(242, 19, 19, 0.4);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-family: 'Outfit', sans-serif;
-        width: 100%;
-    }
-    
-    .btn-rest:hover:not(:disabled) { 
-        transform: translateY(-3px); 
-        box-shadow: 0 12px 30px rgba(242, 19, 19, 0.6); 
-    }
-    
-    .btn-rest:disabled { 
-        background: #2a2a2a; 
-        color: #666; 
-        box-shadow: none; 
-        cursor: not-allowed; 
-        transform: none; 
-    }
-.set-check {
-            width: 35px; height: 35px; 
-            border: 2px solid var(--primary); 
-            border-radius: 8px; 
+        header {
+            background: rgba(5, 5, 5, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 255, 51, 0.2);
+        }
+
+        .selector-box {
+            background: var(--card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 25px;
+            margin: 30px auto;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            max-width: 600px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .selector-box strong {
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: #ddd;
+        }
+
+        select {
+            background: rgba(10, 10, 10, 0.8);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            width: 100%;
+            max-width: 320px;
+            font-family: 'Outfit', sans-serif;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            appearance: none;
+        }
+
+        select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        select option {
+            background: #111;
+            color: white;
+        }
+
+        .nav-tabs {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 10px 20px;
+            scrollbar-width: none;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--card);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .tab-btn:hover {
+            background: rgba(50, 50, 50, 0.4);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px var(--primary-glow);
+            font-weight: 700;
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            padding: 25px 15px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card strong {
+            font-weight: 500;
+            font-size: 1.05rem;
+            line-height: 1.4;
+            color: #eee;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 255, 51, 0.15);
+            background: rgba(20, 30, 20, 0.8);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            background: #0f0f0f;
+            padding: 35px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .modal img {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 45px;
+            color: #fff;
+            background: rgba(255, 30, 30, 0.8);
+            width: 50px;
+            height: 50px;
+            line-height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            z-index: 1010;
+        }
+
+        .close:hover {
+            opacity: 1;
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .timer-box {
+            margin-top: 25px;
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-variant-numeric: tabular-nums;
+            text-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .btn-rest {
+            background: linear-gradient(135deg, #00FF33, #00a020);
+            color: white;
+            border: none;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 255, 51, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Outfit', sans-serif;
+            width: 100%;
+        }
+
+        .btn-rest:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 255, 51, 0.6);
+        }
+
+        .btn-rest:disabled {
+            background: #2a2a2a;
+            color: #666;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .set-check {
+            width: 35px;
+            height: 35px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
             cursor: pointer;
             display: inline-block;
             transition: 0.2s;
             position: relative;
         }
+
         .set-check.checked {
             background: var(--primary);
             box-shadow: 0 0 10px var(--primary-glow);
         }
+
         .set-check.checked::after {
             content: '✓';
             color: white;
@@ -281,1573 +326,1697 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            background: #111;
+            border: 1px solid var(--primary);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 15px 40px rgba(0, 255, 51, 0.2);
+        }
+
+        .login-box h2 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #222;
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            text-align: center;
+        }
+
+        .login-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .user-info {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-top: 15px;
+        }
     </style>
 </head>
+
 <body>
 
-<header><div class="logo">Iron Mastery</div></header>
-
-<div class="selector-box">
-    <strong>🎯 QUAL SEU OBJETIVO HOJE?</strong>
-    <select id="goal" onchange="updateGoal()">
-        <option value="hipertrofia">Hipertrofia (Massa Muscular)</option>
-        <option value="queima">Queima de Gordura (Definição)</option>
-        <option value="forca">Força Extrema</option>
-    </select>
-    <div id="goal-desc" style="color: #aaa; font-style: italic; margin-top: 10px;"></div>
-</div>
-
-<div class="nav-tabs" id="category-nav">
-    <button class="tab-btn active" onclick="showWorkout(this)">🔥 Meu Treino</button>
-    <button class="tab-btn" onclick="showCat('Inferior', this)">Inferiores</button>
-    <button class="tab-btn" onclick="showCat('Peito', this)">Peito</button>
-    <button class="tab-btn" onclick="showCat('Costas', this)">Costas</button>
-    <button class="tab-btn" onclick="showCat('Ombro', this)">Ombro</button>
-    <button class="tab-btn" onclick="showCat('Bíceps', this)">Bíceps</button>
-    <button class="tab-btn" onclick="showCat('Tríceps', this)">Tríceps</button>
-    <button class="tab-btn" onclick="showCat('Trapézio', this)">Trapézio</button>
-    <button class="tab-btn" onclick="showCat('Antebraço', this)">Antebraço</button>
-    <button class="tab-btn" onclick="showCat('Core', this)">Core</button>
-    <button class="tab-btn" onclick="showCat('Outros', this)">Outros</button>
-</div>
-
-<div class="exercise-grid" id="grid"></div>
-
-<div class="modal" id="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <h2 id="m-name" style="color: var(--primary); margin-bottom: 15px;"></h2>
-        <img id="m-img" src="" alt="Execução">
-        <div id="m-reps" style="margin-top: 15px; font-size: 1.2rem; border: 1px solid #444; padding: 10px;"></div>
-        <div id="m-checks" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;"></div>
-        <button class="btn-rest" style="background:#333; margin-top:15px; box-shadow:none; width: 100%; border: 1px solid #555;" id="btn-add-custom" onclick="addToCustom()">⭐ ADICIONAR AO MEU TREINO</button>
-        <div class="timer-box" id="timer">00:45</div>
-        <button class="btn-rest" id="btn-timer" onclick="startRest()">INICIAR DESCANSO</button>
+    <div class="login-modal" id="login-modal" style="display: none;">
+        <div class="login-box">
+            <img src="logo.png.jpeg" alt="JP" style="height: 80px; margin-bottom: 20px; border-radius:10px;">
+            <h2>Bem-vindo!</h2>
+            <p style="color: #ccc;">Insira seu e-mail para acessar e montar seu treino personalizado.</p>
+            <input type="email" id="email-input" placeholder="seu@email.com">
+            <button class="btn-rest" onclick="login()" style="width: 100%; box-shadow: none;">ACESSAR MEU
+                TREINO</button>
+        </div>
     </div>
-</div>
 
-<script>
-    const data = [
-    {
-        "n": "Abd Concentrado Braços estendidos",
-        "f": "Abd Concentrado Braços estendidos.gif",
-        "c": "Core"
-    },
-    {
-        "n": "Abdominal com Carga",
-        "f": "Abdominal com Carga.gif",
-        "c": "Core"
-    },
-    {
-        "n": "Abdominal Concentrado",
-        "f": "Abdominal Concentrado.gif",
-        "c": "Core"
-    },
-    {
-        "n": "Abduçao de quadril em pé",
-        "f": "Abduçao de quadril em pé.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "adutora na tração do cabo cross",
-        "f": "adutora na tração do cabo cross.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Adução na polia",
-        "f": "Adução na polia.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "afundo livre",
-        "f": "afundo livre.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento barra",
-        "f": "agachamento barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento bulgaro com barra",
-        "f": "agachamento bulgaro com barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento bulgaro",
-        "f": "agachamento bulgaro.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Agachamento com halteres com uma perna",
-        "f": "Agachamento com halteres com uma perna.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Agachamento livre com barra",
-        "f": "Agachamento livre com barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento livre pés juntos",
-        "f": "agachamento livre pés juntos.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento na maquina",
-        "f": "agachamento na maquina.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento no banco",
-        "f": "agachamento no banco.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento no cross",
-        "f": "agachamento no cross.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento pés afastados",
-        "f": "agachamento pés afastados.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Agachamento sumo com halteres",
-        "f": "Agachamento sumo com halteres.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "agachamento sumo livre",
-        "f": "agachamento sumo livre.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Agachamento Sumo Peso Corporal",
-        "f": "Agachamento Sumo Peso Corporal.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Agachamento terra com halteres do lado",
-        "f": "Agachamento terra com halteres do lado.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Apoio de frente com medball",
-        "f": "Apoio de frente com medball.gif",
-        "c": "Core"
-    },
-    {
-        "n": "Apoio de frente com step",
-        "f": "Apoio de frente com step.gif",
-        "c": "Core"
-    },
-    {
-        "n": "Apoio de frente de joelhos",
-        "f": "Apoio de frente de joelhos.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Apoio de frente pegada fechada parede",
-        "f": "Apoio de frente pegada fechada parede.gif",
-        "c": "Core"
-    },
-    {
-        "n": "arnold_dips-maschine",
-        "f": "arnold_dips-maschine.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "banco romano sem peso",
-        "f": "banco romano sem peso.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "banco romano",
-        "f": "banco romano.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "barra livre com peso",
-        "f": "barra livre com peso.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "barra livre pegada aberta joelhos flexionados",
-        "f": "barra livre pegada aberta joelhos flexionados.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "barra livre pegada aberta no cross",
-        "f": "barra livre pegada aberta no cross.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "Barra Livre pegada aberta",
-        "f": "Barra Livre pegada aberta.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "barra livre pegada fechada pronada",
-        "f": "barra livre pegada fechada pronada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "barra livre pegada pronada",
-        "f": "barra livre pegada pronada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "barra no gravitan",
-        "f": "barra no gravitan.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "barra no graviton em pé",
-        "f": "barra no graviton em pé.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "biceps concentrado unilateral no cross",
-        "f": "biceps concentrado unilateral no cross.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "biceps polia alta dupla",
-        "f": "biceps polia alta dupla.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "biceps unilateral com banco scort no cross",
-        "f": "biceps unilateral com banco scort no cross.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "biceps unilateral cross",
-        "f": "biceps unilateral cross.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "biceps unilateral polia alta cross",
-        "f": "biceps unilateral polia alta cross.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "cadeira adutora",
-        "f": "cadeira adutora.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "cadeira extensora",
-        "f": "cadeira extensora.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "cadeira flex",
-        "f": "cadeira flex.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "crucifixo beixo no croos em pe",
-        "f": "crucifixo beixo no croos em pe.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo inclinado banco com halteres",
-        "f": "crucifixo inclinado banco com halteres.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo inverso no banco inclinadogif",
-        "f": "crucifixo inverso no banco inclinadogif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo inverso no cross em pé",
-        "f": "crucifixo inverso no cross em pé.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo inverso no cross no banco reto",
-        "f": "crucifixo inverso no cross no banco reto.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo inverso",
-        "f": "crucifixo inverso.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Crucifixo Invertido com Halteres",
-        "f": "Crucifixo Invertido com Halteres.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Crucifixo I_nvertido Polia Alta",
-        "f": "Crucifixo I_nvertido Polia Alta.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Crucifixo Maquina",
-        "f": "Crucifixo Maquina.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo no cross banco reto",
-        "f": "crucifixo no cross banco reto.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo no cross em pé",
-        "f": "crucifixo no cross em pé.gif.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "crucifixo no cross polia alta",
-        "f": "crucifixo no cross polia alta.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Desenvolmento com Halteres",
-        "f": "Desenvolmento com Halteres.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Desenvolmento Frontal com Elastico",
-        "f": "Desenvolmento Frontal com Elastico.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Desenvolmento Máquina",
-        "f": "Desenvolmento Máquina.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "desenvolvimento barra atras da nuca",
-        "f": "desenvolvimento barra atras da nuca.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "desenvolvimento barra sentado atras nuca",
-        "f": "desenvolvimento barra sentado atras nuca.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "desenvolvimento cabo cross",
-        "f": "desenvolvimento cabo cross.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento com Barra sentado",
-        "f": "Desenvolvimento com Barra sentado.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento com Barra",
-        "f": "Desenvolvimento com Barra.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento com Halteres",
-        "f": "Desenvolvimento com Halteres.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "desenvolvimento com rotação",
-        "f": "desenvolvimento com rotação.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "desenvolvimento na barra",
-        "f": "desenvolvimento na barra.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "desenvolvimento no smith barra na nuca",
-        "f": "desenvolvimento no smith barra na nuca.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento por tras com barra",
-        "f": "Desenvolvimento por tras com barra.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento por trás sentado com barra",
-        "f": "Desenvolvimento por trás sentado com barra.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento Sentado com Halteres",
-        "f": "Desenvolvimento Sentado com Halteres.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento Sentado Smith",
-        "f": "Desenvolvimento Sentado Smith.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Desenvolvimento Smith",
-        "f": "Desenvolvimento Smith.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "desenvolvimento unilateral",
-        "f": "desenvolvimento unilateral.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "desnvolvimento barra frente sentado",
-        "f": "desnvolvimento barra frente sentado.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "desvio radial",
-        "f": "desvio radial.gif",
-        "c": "Antebraço"
-    },
-    {
-        "n": "Dumbbell covers com braços estendidos",
-        "f": "Dumbbell covers com braços estendidos.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Dumbbell covers com halteres",
-        "f": "Dumbbell covers com halteres.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Dumbbell covers na bola suiça",
-        "f": "Dumbbell covers na bola suiça.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Dumbbell fly • uitvoering en uitleg • Men_sPower",
-        "f": "Dumbbell fly • uitvoering en uitleg • Men_sPower.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "elevação bilateral na maquina",
-        "f": "elevação bilateral na maquina.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação do cotovelo unilateral",
-        "f": "elevação do cotovelo unilateral.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Elevação Frontal com Barra",
-        "f": "Elevação Frontal com Barra.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação frontal com halteres",
-        "f": "elevação frontal com halteres.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "Elevação Frontal Crossover",
-        "f": "Elevação Frontal Crossover.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação lateral inclinado sentado",
-        "f": "elevação lateral inclinado sentado.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação lateral pegda neutra inversa",
-        "f": "elevação lateral pegda neutra inversa.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação lateral sentado no banco",
-        "f": "elevação lateral sentado no banco.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação letaral com haltrers",
-        "f": "elevação letaral com haltrers.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação leteral cruzada no cross",
-        "f": "elevação leteral cruzada no cross.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação pelvica livre",
-        "f": "elevação pelvica livre.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "elevação unilateral frontal",
-        "f": "elevação unilateral frontal.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação unilateral no cross",
-        "f": "elevação unilateral no cross.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "elevação unilateral",
-        "f": "elevação unilateral.gif",
-        "c": "Ombro"
-    },
-    {
-        "n": "encolhimento livre com halteres",
-        "f": "encolhimento livre com halteres.gif",
-        "c": "Trapézio"
-    },
-    {
-        "n": "encolhimento maquina",
-        "f": "encolhimento maquina.gif",
-        "c": "Trapézio"
-    },
-    {
-        "n": "encolhimento na barra livre",
-        "f": "encolhimento na barra livre.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "encolhimento no smith",
-        "f": "encolhimento no smith.gif",
-        "c": "Trapézio"
-    },
-    {
-        "n": "encolhimento pegada fechada barra no cross",
-        "f": "encolhimento pegada fechada barra no cross.gif",
-        "c": "Trapézio"
-    },
-    {
-        "n": "encolhimento sentado no banco com halteres",
-        "f": "encolhimento sentado no banco com halteres.gif",
-        "c": "Trapézio"
-    },
-    {
-        "n": "encolhimento sentado no banco inlinado com halteres",
-        "f": "encolhimento sentado no banco inlinado com halteres.gif",
-        "c": "Trapézio"
-    },
-    {
-        "n": "enge_klimmzuege_obergriff",
-        "f": "enge_klimmzuege_obergriff.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "Extensão de quadril em pé com joelhos flexionados",
-        "f": "Extensão de quadril em pé com joelhos flexionados.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Extensão de quadril em pé na polia",
-        "f": "Extensão de quadril em pé na polia.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Extensão de Quadril em pé",
-        "f": "Extensão de Quadril em pé.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Extensão de tronco máquina",
-        "f": "Extensão de tronco máquina.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Fitness Gifs 4 U",
-        "f": "Fitness Gifs 4 U.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "flex de cotovelo braços aberto",
-        "f": "flex de cotovelo braços aberto.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "flex de cotovelo completa",
-        "f": "flex de cotovelo completa.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "flex de cotovelo declinado utilizando o banco",
-        "f": "flex de cotovelo declinado utilizando o banco.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "flex de cotovelo declinado",
-        "f": "flex de cotovelo declinado.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "flex de cotovelo fechado com halteres",
-        "f": "flex de cotovelo fechado com halteres.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "flex de cotovelo fechado livre",
-        "f": "flex de cotovelo fechado livre.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "flex de cotovelo fechado",
-        "f": "flex de cotovelo fechado.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "flex de joelho  em pé no cabo cross",
-        "f": "flex de joelho  em pé no cabo cross.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Flexão de punho com barra",
-        "f": "Flexão de punho com barra.gif",
-        "c": "Antebraço"
-    },
-    {
-        "n": "Flexão de punho com halteres",
-        "f": "Flexão de punho com halteres.gif",
-        "c": "Antebraço"
-    },
-    {
-        "n": "Flexão Plantar com peso corporal",
-        "f": "Flexão Plantar com peso corporal.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Hiperextensão de punho com barra",
-        "f": "Hiperextensão de punho com barra.gif",
-        "c": "Antebraço"
-    },
-    {
-        "n": "Hiperextensão de punho com halteres",
-        "f": "Hiperextensão de punho com halteres.gif",
-        "c": "Antebraço"
-    },
-    {
-        "n": "Hiperextensão do tronco",
-        "f": "Hiperextensão do tronco.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Hiperextensões sem dispositivo (banco)",
-        "f": "Hiperextensões sem dispositivo (banco).gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Kick back sentado com halteres",
-        "f": "Kick back sentado com halteres.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "Kick back",
-        "f": "Kick back.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "leg press pés afastados",
-        "f": "leg press pés afastados.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "leg press",
-        "f": "leg press.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "levantamento tarra com halteres",
-        "f": "levantamento tarra com halteres.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "levantamento terra com barra",
-        "f": "levantamento terra com barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "levantamento terra no smith",
-        "f": "levantamento terra no smith.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Levantamento terrra com halteres frente",
-        "f": "Levantamento terrra com halteres frente.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "mesa flex unilateral",
-        "f": "mesa flex unilateral.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "mesa flex",
-        "f": "mesa flex.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "máquina adutora",
-        "f": "máquina adutora.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "panturrinha no leg press",
-        "f": "panturrinha no leg press.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "passada a frente com barra",
-        "f": "passada a frente com barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "passada a frente com halteres",
-        "f": "passada a frente com halteres.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "passada com halteres",
-        "f": "passada com halteres.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "passada para tras com barra",
-        "f": "passada para tras com barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "peito na paralela",
-        "f": "peito na paralela.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Pull Over com Barra",
-        "f": "Pull Over com Barra.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "Pull Over na polia com corda",
-        "f": "Pull Over na polia com corda.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "pulley costa maquina",
-        "f": "pulley costa maquina.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "pulley costa unilateral",
-        "f": "pulley costa unilateral.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "pulley frente pegada supinada",
-        "f": "pulley frente pegada supinada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "pulley frente pegaga fechda pronada",
-        "f": "pulley frente pegaga fechda pronada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "pulley pegada aberta atras da nuca",
-        "f": "pulley pegada aberta atras da nuca.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "pulley pegada aberta pronada",
-        "f": "pulley pegada aberta pronada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "pulley pegada aberta",
-        "f": "pulley pegada aberta.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "puxada maquina pegada supinada",
-        "f": "puxada maquina pegada supinada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "puxada maquina",
-        "f": "puxada maquina.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "Puxador Costas por trás Máquina",
-        "f": "Puxador Costas por trás Máquina.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada aberta no banco inclinada pega supinada",
-        "f": "remada aberta no banco inclinada pega supinada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada aberta no banco inclinado com halteres",
-        "f": "remada aberta no banco inclinado com halteres.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada alta com barra no cross",
-        "f": "remada alta com barra no cross.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada alta com barra pegada aberta",
-        "f": "remada alta com barra pegada aberta.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada alta com barra W",
-        "f": "remada alta com barra W.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada alta com halteres bilateral",
-        "f": "remada alta com halteres bilateral.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada alta com halteres",
-        "f": "remada alta com halteres.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada alta no cross",
-        "f": "remada alta no cross.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada alta pegada abeta com barra",
-        "f": "remada alta pegada abeta com barra.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada articulada pegada supinada",
-        "f": "remada articulada pegada supinada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada articulada",
-        "f": "remada articulada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada baixa no pulley pegada aberta supinada",
-        "f": "remada baixa no pulley pegada aberta supinada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada baixa unilateral no cross",
-        "f": "remada baixa unilateral no cross.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada baixa unilateral pegada neutra",
-        "f": "remada baixa unilateral pegada neutra.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada beixa no pulley triangulo",
-        "f": "remada beixa no pulley triangulo.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada cavalinha pegada aberta",
-        "f": "remada cavalinha pegada aberta.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada cavalinho unilateral",
-        "f": "remada cavalinho unilateral.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada cavalino com barra",
-        "f": "remada cavalino com barra.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada com banco inclinado com haltres",
-        "f": "remada com banco inclinado com haltres.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada com barra",
-        "f": "remada com barra.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada inclinada no smith",
-        "f": "remada inclinada no smith.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada inclinda no banco pegada supinda puxada fechada",
-        "f": "remada inclinda no banco pegada supinda puxada fechada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada livre  com halteres",
-        "f": "remada livre  com halteres.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada livre com barra",
-        "f": "remada livre com barra.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada maquina pronada",
-        "f": "remada maquina pronada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada no banco inclinado pegada pronada com barra",
-        "f": "remada no banco inclinado pegada pronada com barra.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada serrote",
-        "f": "remada serrote.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "remada unilateral cavalindo barra puxada fechada",
-        "f": "remada unilateral cavalindo barra puxada fechada.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "Remanda Alta com Barra",
-        "f": "Remanda Alta com Barra.gif",
-        "c": "Trapézio"
-    },
-    {
-        "n": "Remanda Curvada Barra",
-        "f": "Remanda Curvada Barra.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Remanda unil com apoio banco",
-        "f": "Remanda unil com apoio banco.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "Remo com barra no punho",
-        "f": "Remo com barra no punho.gif",
-        "c": "Antebraço"
-    },
-    {
-        "n": "Retrocesso com Barra",
-        "f": "Retrocesso com Barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Retrocesso com halteres",
-        "f": "Retrocesso com halteres.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "rosca  direta no banco scort",
-        "f": "rosca  direta no banco scort.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca alternada aparelho biarticular",
-        "f": "rosca alternada aparelho biarticular.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca alternada com giro",
-        "f": "rosca alternada com giro.gif.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca alternada pegada neutra sentado no banco",
-        "f": "rosca alternada pegada neutra sentado no banco.gif.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca alternada pegada neutra",
-        "f": "rosca alternada pegada neutra.gif.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "Rosca Concentrada 2",
-        "f": "Rosca Concentrada 2.gif.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "Rosca Concentrada",
-        "f": "Rosca Concentrada.gif.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca consentrada unilateral  no banco declinado",
-        "f": "rosca consentrada unilateral  no banco declinado.gif.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca dierata pegada invertida barra W",
-        "f": "rosca dierata pegada invertida barra W.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca dierta pegada aberta",
-        "f": "rosca dierta pegada aberta.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca dierta pegada fechada",
-        "f": "rosca dierta pegada fechada.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca direta apaiada no banco barra W",
-        "f": "rosca direta apaiada no banco barra W.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca direta barra pegada fechada sentado no banco",
-        "f": "rosca direta barra pegada fechada sentado no banco.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca direta barra W sentado banco",
-        "f": "rosca direta barra W sentado banco.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca direta barra W",
-        "f": "rosca direta barra W.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca direta deitado no banco reto no cross",
-        "f": "rosca direta deitado no banco reto no cross.gif.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca direta no cross barra W",
-        "f": "rosca direta no cross barra W.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca direta pegada fechada barra W",
-        "f": "rosca direta pegada fechada barra W.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca neutra  unilateral no banco scort",
-        "f": "rosca neutra  unilateral no banco scort.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca neutra com halteres sentado no banco",
-        "f": "rosca neutra com halteres sentado no banco.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca neutra com halteres",
-        "f": "rosca neutra com halteres.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca neutra no banco scort aparelho",
-        "f": "rosca neutra no banco scort aparelho.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca no banco scort barra W",
-        "f": "rosca no banco scort barra W.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca no scort",
-        "f": "rosca no scort.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "Rosca Scott Unil com Halteres",
-        "f": "Rosca Scott Unil com Halteres.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca unilateral com halteres sentado no banco",
-        "f": "rosca unilateral com halteres sentado no banco.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca unilateral com halteres",
-        "f": "rosca unilateral com halteres.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "rosca unilateral pegada neutra com halteres",
-        "f": "rosca unilateral pegada neutra com halteres.gif",
-        "c": "Bíceps"
-    },
-    {
-        "n": "seitlicher_ausfallschritt_mit_langhantel",
-        "f": "seitlicher_ausfallschritt_mit_langhantel.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "stiff com barra",
-        "f": "stiff com barra.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Stiff com Halteres",
-        "f": "Stiff com Halteres.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "stiff no smth unilateral",
-        "f": "stiff no smth unilateral.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "stiff no smth",
-        "f": "stiff no smth.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "Stiff unil com medball",
-        "f": "Stiff unil com medball.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "stiff unilateral com kettibel",
-        "f": "stiff unilateral com kettibel.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "stiff unilateral",
-        "f": "stiff unilateral.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "stiff",
-        "f": "stiff.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "superman",
-        "f": "superman.gif",
-        "c": "Costas"
-    },
-    {
-        "n": "supindo reto barra",
-        "f": "supindo reto barra.gif",
-        "c": "Outros"
-    },
-    {
-        "n": "supino articulado maquina",
-        "f": "supino articulado maquina.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino crucifixo com halteres",
-        "f": "supino crucifixo com halteres.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino declinado barra",
-        "f": "supino declinado barra.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino declinado barrapegada aberta",
-        "f": "supino declinado barrapegada aberta.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino declinado com halteres",
-        "f": "supino declinado com halteres.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino declinado no smit",
-        "f": "supino declinado no smit.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Supino declinado pegada fechada",
-        "f": "Supino declinado pegada fechada.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino horizontal maquina",
-        "f": "supino horizontal maquina.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Supino Incliado Maquina",
-        "f": "Supino Incliado Maquina.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino inclinado  aparelho articulado",
-        "f": "supino inclinado  aparelho articulado.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino inclinado banco cross",
-        "f": "supino inclinado banco cross.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino inclinado banco no smith",
-        "f": "supino inclinado banco no smith.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino inclinado banco",
-        "f": "supino inclinado banco.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Supino inclinado com halteres",
-        "f": "Supino inclinado com halteres.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino inclinado no smith",
-        "f": "supino inclinado no smith.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Supino pegada fechada",
-        "f": "Supino pegada fechada.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino reto  no cross",
-        "f": "supino reto  no cross.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "Supino reto com halteres (2)",
-        "f": "Supino reto com halteres (2).gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino reto com halteres",
-        "f": "supino reto com halteres.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino reto pegada aberta",
-        "f": "supino reto pegada aberta.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "supino vertical pegada neutra maquina",
-        "f": "supino vertical pegada neutra maquina.gif",
-        "c": "Peito"
-    },
-    {
-        "n": "tiefe_langhantel_kniebeuge",
-        "f": "tiefe_langhantel_kniebeuge.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "triceps afundo no banco",
-        "f": "triceps afundo no banco.gif",
-        "c": "Inferior"
-    },
-    {
-        "n": "triceps apoaiado na pareda",
-        "f": "triceps apoaiado na pareda.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps com halteres no banco reto",
-        "f": "triceps com halteres no banco reto.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps extenção de cotovelo unilateral",
-        "f": "triceps extenção de cotovelo unilateral.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "Triceps frances barra W",
-        "f": "Triceps frances barra W.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps françes bilateral no cross",
-        "f": "triceps françes bilateral no cross.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps françes unilateral deitado no banco",
-        "f": "triceps françes unilateral deitado no banco.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps françes unilateral no corss",
-        "f": "triceps françes unilateral no corss.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps inclinado no cross bilateral",
-        "f": "triceps inclinado no cross bilateral.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps na paralela maquiba",
-        "f": "triceps na paralela maquiba.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps no aparelho scort",
-        "f": "triceps no aparelho scort.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps no cross barra triangulo",
-        "f": "triceps no cross barra triangulo.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps no cross deitado no banco reto",
-        "f": "triceps no cross deitado no banco reto.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps paralelo no banco",
-        "f": "triceps paralelo no banco.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps patada blateral com halteres",
-        "f": "triceps patada blateral com halteres.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps patada unilateral com halteres",
-        "f": "triceps patada unilateral com halteres.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps pateda com alteres",
-        "f": "triceps pateda com alteres.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps pegada pronada uniatres no cross",
-        "f": "triceps pegada pronada uniatres no cross.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps testa com barra",
-        "f": "triceps testa com barra.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "Triceps testa com halteres",
-        "f": "Triceps testa com halteres.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps testa pegada neutra deitado no banco",
-        "f": "triceps testa pegada neutra deitado no banco.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps tresta com halteres",
-        "f": "triceps tresta com halteres.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps unilateral 90G deitado",
-        "f": "triceps unilateral 90G deitado.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps unilateral deitado no banco",
-        "f": "triceps unilateral deitado no banco.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps unilateral pegada supinada",
-        "f": "triceps unilateral pegada supinada.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "triceps",
-        "f": "triceps.gif",
-        "c": "Tríceps"
-    },
-    {
-        "n": "voador maquina",
-        "f": "voador maquina.gif",
-        "c": "Peito"
-    }
-];
+    <header>
+        <img src="logo.png.jpeg" alt="JP Espaço Fitness"
+            style="height: 120px; max-width: 100%; border-radius: 12px; object-fit: contain;">
+        <div class="user-info" id="user-display" style="display: none;">
+            Logado como: <strong id="user-email" style="color: var(--primary);"></strong>
+            <span style="margin-left: 15px; cursor: pointer; text-decoration: underline; color: #aaa;"
+                onclick="logout()">Sair</span>
+        </div>
+    </header>
 
-    function updateGoal() {
-        const g = document.getElementById('goal').value;
-        const d = document.getElementById('goal-desc');
-        if(g === 'hipertrofia') d.innerText = "Séries: 3-4 | Reps: 8-12 | Descanso: 90s";
-        if(g === 'queima') d.innerText = "Séries: 4 | Reps: 15-20 | Descanso: 30s";
-        if(g === 'forca') d.innerText = "Séries: 5 | Reps: 3-5 | Descanso: 3 min";
-    }
+    <div class="selector-box">
+        <strong>🎯 QUAL SEU OBJETIVO HOJE?</strong>
+        <select id="goal" onchange="updateGoal()">
+            <option value="hipertrofia">Hipertrofia (Massa Muscular)</option>
+            <option value="queima">Queima de Gordura (Definição)</option>
+            <option value="forca">Força Extrema</option>
+        </select>
+        <div id="goal-desc" style="color: #aaa; font-style: italic; margin-top: 10px;"></div>
+    </div>
 
-    
-    const workoutPlan = {
-        1: { name: 'Segunda: Peito & Tríceps', cats: ['Peito', 'Tríceps'] },
-        2: { name: 'Terça: Costas & Bíceps', cats: ['Costas', 'Bíceps'] },
-        3: { name: 'Quarta: Inferiores', cats: ['Inferior'] },
-        4: { name: 'Quinta: Ombro & Trapézio', cats: ['Ombro', 'Trapézio'] },
-        5: { name: 'Sexta: Peito & Costas', cats: ['Peito', 'Costas'] },
-        6: { name: 'Sábado: Inferiores & Core', cats: ['Inferior', 'Core'] },
-        0: { name: 'Domingo: Descanso Ativo', cats: ['Core', 'Antebraço'] }
-    };
+    <div class="nav-tabs" id="category-nav">
+        <button class="tab-btn active" onclick="showWorkout(this)">🔥 Treino do Dia</button>
+        <button class="tab-btn" onclick="showCustomWorkout(this)">⭐ Meu Treino</button>
+        <button class="tab-btn" onclick="showCat('Inferior', this)">Inferiores</button>
+        <button class="tab-btn" onclick="showCat('Peito', this)">Peito</button>
+        <button class="tab-btn" onclick="showCat('Costas', this)">Costas</button>
+        <button class="tab-btn" onclick="showCat('Ombro', this)">Ombro</button>
+        <button class="tab-btn" onclick="showCat('Bíceps', this)">Bíceps</button>
+        <button class="tab-btn" onclick="showCat('Tríceps', this)">Tríceps</button>
+        <button class="tab-btn" onclick="showCat('Trapézio', this)">Trapézio</button>
+        <button class="tab-btn" onclick="showCat('Antebraço', this)">Antebraço</button>
+        <button class="tab-btn" onclick="showCat('Core', this)">Core</button>
+        <button class="tab-btn" onclick="showCat('Outros', this)">Outros</button>
+    </div>
 
-    function showWorkout(btn) {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        if(btn) btn.classList.add('active');
-        
-        const day = new Date().getDay(); // 0 is Sunday, 1 is Monday...
-        const plan = workoutPlan[day];
-        
-        const grid = document.getElementById('grid');
-        grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px; padding: 20px; background: var(--card); border-radius: var(--radius); border: 1px solid var(--primary);">
+    <div class="exercise-grid" id="grid"></div>
+
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <h2 id="m-name" style="color: var(--primary); margin-bottom: 15px;"></h2>
+            <img id="m-img" src="" alt="Execução">
+            <div id="m-reps" style="margin-top: 15px; font-size: 1.2rem; border: 1px solid #444; padding: 10px;"></div>
+            <div id="m-checks" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;"></div>
+            <button class="btn-rest"
+                style="background:#333; margin-top:15px; box-shadow:none; width: 100%; border: 1px solid #555;"
+                id="btn-add-custom" onclick="addToCustom()">⭐ ADICIONAR AO MEU TREINO</button>
+            <div class="timer-box" id="timer">00:45</div>
+            <button class="btn-rest" id="btn-timer" onclick="startRest()">INICIAR DESCANSO</button>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                "n": "Abd Concentrado Braços estendidos",
+                "f": "Abd Concentrado Braços estendidos.gif",
+                "c": "Core"
+            },
+            {
+                "n": "Abdominal com Carga",
+                "f": "Abdominal com Carga.gif",
+                "c": "Core"
+            },
+            {
+                "n": "Abdominal Concentrado",
+                "f": "Abdominal Concentrado.gif",
+                "c": "Core"
+            },
+            {
+                "n": "Abduçao de quadril em pé",
+                "f": "Abduçao de quadril em pé.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "adutora na tração do cabo cross",
+                "f": "adutora na tração do cabo cross.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Adução na polia",
+                "f": "Adução na polia.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "afundo livre",
+                "f": "afundo livre.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento barra",
+                "f": "agachamento barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento bulgaro com barra",
+                "f": "agachamento bulgaro com barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento bulgaro",
+                "f": "agachamento bulgaro.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Agachamento com halteres com uma perna",
+                "f": "Agachamento com halteres com uma perna.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Agachamento livre com barra",
+                "f": "Agachamento livre com barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento livre pés juntos",
+                "f": "agachamento livre pés juntos.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento na maquina",
+                "f": "agachamento na maquina.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento no banco",
+                "f": "agachamento no banco.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento no cross",
+                "f": "agachamento no cross.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento pés afastados",
+                "f": "agachamento pés afastados.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Agachamento sumo com halteres",
+                "f": "Agachamento sumo com halteres.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "agachamento sumo livre",
+                "f": "agachamento sumo livre.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Agachamento Sumo Peso Corporal",
+                "f": "Agachamento Sumo Peso Corporal.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Agachamento terra com halteres do lado",
+                "f": "Agachamento terra com halteres do lado.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Apoio de frente com medball",
+                "f": "Apoio de frente com medball.gif",
+                "c": "Core"
+            },
+            {
+                "n": "Apoio de frente com step",
+                "f": "Apoio de frente com step.gif",
+                "c": "Core"
+            },
+            {
+                "n": "Apoio de frente de joelhos",
+                "f": "Apoio de frente de joelhos.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Apoio de frente pegada fechada parede",
+                "f": "Apoio de frente pegada fechada parede.gif",
+                "c": "Core"
+            },
+            {
+                "n": "arnold_dips-maschine",
+                "f": "arnold_dips-maschine.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "banco romano sem peso",
+                "f": "banco romano sem peso.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "banco romano",
+                "f": "banco romano.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "barra livre com peso",
+                "f": "barra livre com peso.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "barra livre pegada aberta joelhos flexionados",
+                "f": "barra livre pegada aberta joelhos flexionados.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "barra livre pegada aberta no cross",
+                "f": "barra livre pegada aberta no cross.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "Barra Livre pegada aberta",
+                "f": "Barra Livre pegada aberta.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "barra livre pegada fechada pronada",
+                "f": "barra livre pegada fechada pronada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "barra livre pegada pronada",
+                "f": "barra livre pegada pronada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "barra no gravitan",
+                "f": "barra no gravitan.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "barra no graviton em pé",
+                "f": "barra no graviton em pé.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "biceps concentrado unilateral no cross",
+                "f": "biceps concentrado unilateral no cross.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "biceps polia alta dupla",
+                "f": "biceps polia alta dupla.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "biceps unilateral com banco scort no cross",
+                "f": "biceps unilateral com banco scort no cross.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "biceps unilateral cross",
+                "f": "biceps unilateral cross.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "biceps unilateral polia alta cross",
+                "f": "biceps unilateral polia alta cross.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "cadeira adutora",
+                "f": "cadeira adutora.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "cadeira extensora",
+                "f": "cadeira extensora.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "cadeira flex",
+                "f": "cadeira flex.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "crucifixo beixo no croos em pe",
+                "f": "crucifixo beixo no croos em pe.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo inclinado banco com halteres",
+                "f": "crucifixo inclinado banco com halteres.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo inverso no banco inclinadogif",
+                "f": "crucifixo inverso no banco inclinadogif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo inverso no cross em pé",
+                "f": "crucifixo inverso no cross em pé.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo inverso no cross no banco reto",
+                "f": "crucifixo inverso no cross no banco reto.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo inverso",
+                "f": "crucifixo inverso.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Crucifixo Invertido com Halteres",
+                "f": "Crucifixo Invertido com Halteres.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Crucifixo I_nvertido Polia Alta",
+                "f": "Crucifixo I_nvertido Polia Alta.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Crucifixo Maquina",
+                "f": "Crucifixo Maquina.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo no cross banco reto",
+                "f": "crucifixo no cross banco reto.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo no cross em pé",
+                "f": "crucifixo no cross em pé.gif.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "crucifixo no cross polia alta",
+                "f": "crucifixo no cross polia alta.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Desenvolmento com Halteres",
+                "f": "Desenvolmento com Halteres.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Desenvolmento Frontal com Elastico",
+                "f": "Desenvolmento Frontal com Elastico.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Desenvolmento Máquina",
+                "f": "Desenvolmento Máquina.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "desenvolvimento barra atras da nuca",
+                "f": "desenvolvimento barra atras da nuca.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "desenvolvimento barra sentado atras nuca",
+                "f": "desenvolvimento barra sentado atras nuca.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "desenvolvimento cabo cross",
+                "f": "desenvolvimento cabo cross.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento com Barra sentado",
+                "f": "Desenvolvimento com Barra sentado.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento com Barra",
+                "f": "Desenvolvimento com Barra.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento com Halteres",
+                "f": "Desenvolvimento com Halteres.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "desenvolvimento com rotação",
+                "f": "desenvolvimento com rotação.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "desenvolvimento na barra",
+                "f": "desenvolvimento na barra.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "desenvolvimento no smith barra na nuca",
+                "f": "desenvolvimento no smith barra na nuca.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento por tras com barra",
+                "f": "Desenvolvimento por tras com barra.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento por trás sentado com barra",
+                "f": "Desenvolvimento por trás sentado com barra.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento Sentado com Halteres",
+                "f": "Desenvolvimento Sentado com Halteres.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento Sentado Smith",
+                "f": "Desenvolvimento Sentado Smith.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Desenvolvimento Smith",
+                "f": "Desenvolvimento Smith.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "desenvolvimento unilateral",
+                "f": "desenvolvimento unilateral.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "desnvolvimento barra frente sentado",
+                "f": "desnvolvimento barra frente sentado.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "desvio radial",
+                "f": "desvio radial.gif",
+                "c": "Antebraço"
+            },
+            {
+                "n": "Dumbbell covers com braços estendidos",
+                "f": "Dumbbell covers com braços estendidos.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Dumbbell covers com halteres",
+                "f": "Dumbbell covers com halteres.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Dumbbell covers na bola suiça",
+                "f": "Dumbbell covers na bola suiça.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Dumbbell fly • uitvoering en uitleg • Men_sPower",
+                "f": "Dumbbell fly • uitvoering en uitleg • Men_sPower.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "elevação bilateral na maquina",
+                "f": "elevação bilateral na maquina.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação do cotovelo unilateral",
+                "f": "elevação do cotovelo unilateral.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Elevação Frontal com Barra",
+                "f": "Elevação Frontal com Barra.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação frontal com halteres",
+                "f": "elevação frontal com halteres.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "Elevação Frontal Crossover",
+                "f": "Elevação Frontal Crossover.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação lateral inclinado sentado",
+                "f": "elevação lateral inclinado sentado.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação lateral pegda neutra inversa",
+                "f": "elevação lateral pegda neutra inversa.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação lateral sentado no banco",
+                "f": "elevação lateral sentado no banco.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação letaral com haltrers",
+                "f": "elevação letaral com haltrers.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação leteral cruzada no cross",
+                "f": "elevação leteral cruzada no cross.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação pelvica livre",
+                "f": "elevação pelvica livre.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "elevação unilateral frontal",
+                "f": "elevação unilateral frontal.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação unilateral no cross",
+                "f": "elevação unilateral no cross.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "elevação unilateral",
+                "f": "elevação unilateral.gif",
+                "c": "Ombro"
+            },
+            {
+                "n": "encolhimento livre com halteres",
+                "f": "encolhimento livre com halteres.gif",
+                "c": "Trapézio"
+            },
+            {
+                "n": "encolhimento maquina",
+                "f": "encolhimento maquina.gif",
+                "c": "Trapézio"
+            },
+            {
+                "n": "encolhimento na barra livre",
+                "f": "encolhimento na barra livre.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "encolhimento no smith",
+                "f": "encolhimento no smith.gif",
+                "c": "Trapézio"
+            },
+            {
+                "n": "encolhimento pegada fechada barra no cross",
+                "f": "encolhimento pegada fechada barra no cross.gif",
+                "c": "Trapézio"
+            },
+            {
+                "n": "encolhimento sentado no banco com halteres",
+                "f": "encolhimento sentado no banco com halteres.gif",
+                "c": "Trapézio"
+            },
+            {
+                "n": "encolhimento sentado no banco inlinado com halteres",
+                "f": "encolhimento sentado no banco inlinado com halteres.gif",
+                "c": "Trapézio"
+            },
+            {
+                "n": "enge_klimmzuege_obergriff",
+                "f": "enge_klimmzuege_obergriff.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "Extensão de quadril em pé com joelhos flexionados",
+                "f": "Extensão de quadril em pé com joelhos flexionados.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Extensão de quadril em pé na polia",
+                "f": "Extensão de quadril em pé na polia.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Extensão de Quadril em pé",
+                "f": "Extensão de Quadril em pé.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Extensão de tronco máquina",
+                "f": "Extensão de tronco máquina.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Fitness Gifs 4 U",
+                "f": "Fitness Gifs 4 U.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "flex de cotovelo braços aberto",
+                "f": "flex de cotovelo braços aberto.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "flex de cotovelo completa",
+                "f": "flex de cotovelo completa.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "flex de cotovelo declinado utilizando o banco",
+                "f": "flex de cotovelo declinado utilizando o banco.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "flex de cotovelo declinado",
+                "f": "flex de cotovelo declinado.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "flex de cotovelo fechado com halteres",
+                "f": "flex de cotovelo fechado com halteres.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "flex de cotovelo fechado livre",
+                "f": "flex de cotovelo fechado livre.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "flex de cotovelo fechado",
+                "f": "flex de cotovelo fechado.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "flex de joelho  em pé no cabo cross",
+                "f": "flex de joelho  em pé no cabo cross.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Flexão de punho com barra",
+                "f": "Flexão de punho com barra.gif",
+                "c": "Antebraço"
+            },
+            {
+                "n": "Flexão de punho com halteres",
+                "f": "Flexão de punho com halteres.gif",
+                "c": "Antebraço"
+            },
+            {
+                "n": "Flexão Plantar com peso corporal",
+                "f": "Flexão Plantar com peso corporal.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Hiperextensão de punho com barra",
+                "f": "Hiperextensão de punho com barra.gif",
+                "c": "Antebraço"
+            },
+            {
+                "n": "Hiperextensão de punho com halteres",
+                "f": "Hiperextensão de punho com halteres.gif",
+                "c": "Antebraço"
+            },
+            {
+                "n": "Hiperextensão do tronco",
+                "f": "Hiperextensão do tronco.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Hiperextensões sem dispositivo (banco)",
+                "f": "Hiperextensões sem dispositivo (banco).gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Kick back sentado com halteres",
+                "f": "Kick back sentado com halteres.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "Kick back",
+                "f": "Kick back.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "leg press pés afastados",
+                "f": "leg press pés afastados.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "leg press",
+                "f": "leg press.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "levantamento tarra com halteres",
+                "f": "levantamento tarra com halteres.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "levantamento terra com barra",
+                "f": "levantamento terra com barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "levantamento terra no smith",
+                "f": "levantamento terra no smith.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Levantamento terrra com halteres frente",
+                "f": "Levantamento terrra com halteres frente.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "mesa flex unilateral",
+                "f": "mesa flex unilateral.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "mesa flex",
+                "f": "mesa flex.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "máquina adutora",
+                "f": "máquina adutora.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "panturrinha no leg press",
+                "f": "panturrinha no leg press.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "passada a frente com barra",
+                "f": "passada a frente com barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "passada a frente com halteres",
+                "f": "passada a frente com halteres.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "passada com halteres",
+                "f": "passada com halteres.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "passada para tras com barra",
+                "f": "passada para tras com barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "peito na paralela",
+                "f": "peito na paralela.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Pull Over com Barra",
+                "f": "Pull Over com Barra.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "Pull Over na polia com corda",
+                "f": "Pull Over na polia com corda.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "pulley costa maquina",
+                "f": "pulley costa maquina.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "pulley costa unilateral",
+                "f": "pulley costa unilateral.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "pulley frente pegada supinada",
+                "f": "pulley frente pegada supinada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "pulley frente pegaga fechda pronada",
+                "f": "pulley frente pegaga fechda pronada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "pulley pegada aberta atras da nuca",
+                "f": "pulley pegada aberta atras da nuca.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "pulley pegada aberta pronada",
+                "f": "pulley pegada aberta pronada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "pulley pegada aberta",
+                "f": "pulley pegada aberta.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "puxada maquina pegada supinada",
+                "f": "puxada maquina pegada supinada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "puxada maquina",
+                "f": "puxada maquina.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "Puxador Costas por trás Máquina",
+                "f": "Puxador Costas por trás Máquina.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada aberta no banco inclinada pega supinada",
+                "f": "remada aberta no banco inclinada pega supinada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada aberta no banco inclinado com halteres",
+                "f": "remada aberta no banco inclinado com halteres.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada alta com barra no cross",
+                "f": "remada alta com barra no cross.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada alta com barra pegada aberta",
+                "f": "remada alta com barra pegada aberta.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada alta com barra W",
+                "f": "remada alta com barra W.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada alta com halteres bilateral",
+                "f": "remada alta com halteres bilateral.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada alta com halteres",
+                "f": "remada alta com halteres.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada alta no cross",
+                "f": "remada alta no cross.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada alta pegada abeta com barra",
+                "f": "remada alta pegada abeta com barra.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada articulada pegada supinada",
+                "f": "remada articulada pegada supinada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada articulada",
+                "f": "remada articulada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada baixa no pulley pegada aberta supinada",
+                "f": "remada baixa no pulley pegada aberta supinada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada baixa unilateral no cross",
+                "f": "remada baixa unilateral no cross.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada baixa unilateral pegada neutra",
+                "f": "remada baixa unilateral pegada neutra.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada beixa no pulley triangulo",
+                "f": "remada beixa no pulley triangulo.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada cavalinha pegada aberta",
+                "f": "remada cavalinha pegada aberta.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada cavalinho unilateral",
+                "f": "remada cavalinho unilateral.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada cavalino com barra",
+                "f": "remada cavalino com barra.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada com banco inclinado com haltres",
+                "f": "remada com banco inclinado com haltres.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada com barra",
+                "f": "remada com barra.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada inclinada no smith",
+                "f": "remada inclinada no smith.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada inclinda no banco pegada supinda puxada fechada",
+                "f": "remada inclinda no banco pegada supinda puxada fechada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada livre  com halteres",
+                "f": "remada livre  com halteres.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada livre com barra",
+                "f": "remada livre com barra.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada maquina pronada",
+                "f": "remada maquina pronada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada no banco inclinado pegada pronada com barra",
+                "f": "remada no banco inclinado pegada pronada com barra.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada serrote",
+                "f": "remada serrote.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "remada unilateral cavalindo barra puxada fechada",
+                "f": "remada unilateral cavalindo barra puxada fechada.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "Remanda Alta com Barra",
+                "f": "Remanda Alta com Barra.gif",
+                "c": "Trapézio"
+            },
+            {
+                "n": "Remanda Curvada Barra",
+                "f": "Remanda Curvada Barra.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Remanda unil com apoio banco",
+                "f": "Remanda unil com apoio banco.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "Remo com barra no punho",
+                "f": "Remo com barra no punho.gif",
+                "c": "Antebraço"
+            },
+            {
+                "n": "Retrocesso com Barra",
+                "f": "Retrocesso com Barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Retrocesso com halteres",
+                "f": "Retrocesso com halteres.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "rosca  direta no banco scort",
+                "f": "rosca  direta no banco scort.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca alternada aparelho biarticular",
+                "f": "rosca alternada aparelho biarticular.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca alternada com giro",
+                "f": "rosca alternada com giro.gif.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca alternada pegada neutra sentado no banco",
+                "f": "rosca alternada pegada neutra sentado no banco.gif.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca alternada pegada neutra",
+                "f": "rosca alternada pegada neutra.gif.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "Rosca Concentrada 2",
+                "f": "Rosca Concentrada 2.gif.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "Rosca Concentrada",
+                "f": "Rosca Concentrada.gif.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca consentrada unilateral  no banco declinado",
+                "f": "rosca consentrada unilateral  no banco declinado.gif.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca dierata pegada invertida barra W",
+                "f": "rosca dierata pegada invertida barra W.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca dierta pegada aberta",
+                "f": "rosca dierta pegada aberta.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca dierta pegada fechada",
+                "f": "rosca dierta pegada fechada.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca direta apaiada no banco barra W",
+                "f": "rosca direta apaiada no banco barra W.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca direta barra pegada fechada sentado no banco",
+                "f": "rosca direta barra pegada fechada sentado no banco.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca direta barra W sentado banco",
+                "f": "rosca direta barra W sentado banco.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca direta barra W",
+                "f": "rosca direta barra W.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca direta deitado no banco reto no cross",
+                "f": "rosca direta deitado no banco reto no cross.gif.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca direta no cross barra W",
+                "f": "rosca direta no cross barra W.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca direta pegada fechada barra W",
+                "f": "rosca direta pegada fechada barra W.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca neutra  unilateral no banco scort",
+                "f": "rosca neutra  unilateral no banco scort.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca neutra com halteres sentado no banco",
+                "f": "rosca neutra com halteres sentado no banco.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca neutra com halteres",
+                "f": "rosca neutra com halteres.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca neutra no banco scort aparelho",
+                "f": "rosca neutra no banco scort aparelho.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca no banco scort barra W",
+                "f": "rosca no banco scort barra W.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca no scort",
+                "f": "rosca no scort.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "Rosca Scott Unil com Halteres",
+                "f": "Rosca Scott Unil com Halteres.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca unilateral com halteres sentado no banco",
+                "f": "rosca unilateral com halteres sentado no banco.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca unilateral com halteres",
+                "f": "rosca unilateral com halteres.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "rosca unilateral pegada neutra com halteres",
+                "f": "rosca unilateral pegada neutra com halteres.gif",
+                "c": "Bíceps"
+            },
+            {
+                "n": "seitlicher_ausfallschritt_mit_langhantel",
+                "f": "seitlicher_ausfallschritt_mit_langhantel.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "stiff com barra",
+                "f": "stiff com barra.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Stiff com Halteres",
+                "f": "Stiff com Halteres.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "stiff no smth unilateral",
+                "f": "stiff no smth unilateral.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "stiff no smth",
+                "f": "stiff no smth.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "Stiff unil com medball",
+                "f": "Stiff unil com medball.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "stiff unilateral com kettibel",
+                "f": "stiff unilateral com kettibel.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "stiff unilateral",
+                "f": "stiff unilateral.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "stiff",
+                "f": "stiff.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "superman",
+                "f": "superman.gif",
+                "c": "Costas"
+            },
+            {
+                "n": "supindo reto barra",
+                "f": "supindo reto barra.gif",
+                "c": "Outros"
+            },
+            {
+                "n": "supino articulado maquina",
+                "f": "supino articulado maquina.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino crucifixo com halteres",
+                "f": "supino crucifixo com halteres.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino declinado barra",
+                "f": "supino declinado barra.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino declinado barrapegada aberta",
+                "f": "supino declinado barrapegada aberta.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino declinado com halteres",
+                "f": "supino declinado com halteres.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino declinado no smit",
+                "f": "supino declinado no smit.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Supino declinado pegada fechada",
+                "f": "Supino declinado pegada fechada.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino horizontal maquina",
+                "f": "supino horizontal maquina.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Supino Incliado Maquina",
+                "f": "Supino Incliado Maquina.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino inclinado  aparelho articulado",
+                "f": "supino inclinado  aparelho articulado.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino inclinado banco cross",
+                "f": "supino inclinado banco cross.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino inclinado banco no smith",
+                "f": "supino inclinado banco no smith.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino inclinado banco",
+                "f": "supino inclinado banco.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Supino inclinado com halteres",
+                "f": "Supino inclinado com halteres.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino inclinado no smith",
+                "f": "supino inclinado no smith.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Supino pegada fechada",
+                "f": "Supino pegada fechada.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino reto  no cross",
+                "f": "supino reto  no cross.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "Supino reto com halteres (2)",
+                "f": "Supino reto com halteres (2).gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino reto com halteres",
+                "f": "supino reto com halteres.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino reto pegada aberta",
+                "f": "supino reto pegada aberta.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "supino vertical pegada neutra maquina",
+                "f": "supino vertical pegada neutra maquina.gif",
+                "c": "Peito"
+            },
+            {
+                "n": "tiefe_langhantel_kniebeuge",
+                "f": "tiefe_langhantel_kniebeuge.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "triceps afundo no banco",
+                "f": "triceps afundo no banco.gif",
+                "c": "Inferior"
+            },
+            {
+                "n": "triceps apoaiado na pareda",
+                "f": "triceps apoaiado na pareda.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps com halteres no banco reto",
+                "f": "triceps com halteres no banco reto.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps extenção de cotovelo unilateral",
+                "f": "triceps extenção de cotovelo unilateral.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "Triceps frances barra W",
+                "f": "Triceps frances barra W.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps françes bilateral no cross",
+                "f": "triceps françes bilateral no cross.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps françes unilateral deitado no banco",
+                "f": "triceps françes unilateral deitado no banco.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps françes unilateral no corss",
+                "f": "triceps françes unilateral no corss.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps inclinado no cross bilateral",
+                "f": "triceps inclinado no cross bilateral.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps na paralela maquiba",
+                "f": "triceps na paralela maquiba.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps no aparelho scort",
+                "f": "triceps no aparelho scort.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps no cross barra triangulo",
+                "f": "triceps no cross barra triangulo.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps no cross deitado no banco reto",
+                "f": "triceps no cross deitado no banco reto.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps paralelo no banco",
+                "f": "triceps paralelo no banco.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps patada blateral com halteres",
+                "f": "triceps patada blateral com halteres.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps patada unilateral com halteres",
+                "f": "triceps patada unilateral com halteres.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps pateda com alteres",
+                "f": "triceps pateda com alteres.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps pegada pronada uniatres no cross",
+                "f": "triceps pegada pronada uniatres no cross.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps testa com barra",
+                "f": "triceps testa com barra.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "Triceps testa com halteres",
+                "f": "Triceps testa com halteres.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps testa pegada neutra deitado no banco",
+                "f": "triceps testa pegada neutra deitado no banco.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps tresta com halteres",
+                "f": "triceps tresta com halteres.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps unilateral 90G deitado",
+                "f": "triceps unilateral 90G deitado.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps unilateral deitado no banco",
+                "f": "triceps unilateral deitado no banco.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps unilateral pegada supinada",
+                "f": "triceps unilateral pegada supinada.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "triceps",
+                "f": "triceps.gif",
+                "c": "Tríceps"
+            },
+            {
+                "n": "voador maquina",
+                "f": "voador maquina.gif",
+                "c": "Peito"
+            }
+        ];
+
+        function updateGoal() {
+            const g = document.getElementById('goal').value;
+            const d = document.getElementById('goal-desc');
+            if (g === 'hipertrofia') d.innerText = "Séries: 3-4 | Reps: 8-12 | Descanso: 90s";
+            if (g === 'queima') d.innerText = "Séries: 4 | Reps: 15-20 | Descanso: 30s";
+            if (g === 'forca') d.innerText = "Séries: 5 | Reps: 3-5 | Descanso: 3 min";
+        }
+
+
+        const workoutPlan = {
+            1: { name: 'Segunda: Peito & Tríceps', cats: ['Peito', 'Tríceps'] },
+            2: { name: 'Terça: Costas & Bíceps', cats: ['Costas', 'Bíceps'] },
+            3: { name: 'Quarta: Inferiores', cats: ['Inferior'] },
+            4: { name: 'Quinta: Ombro & Trapézio', cats: ['Ombro', 'Trapézio'] },
+            5: { name: 'Sexta: Peito & Costas', cats: ['Peito', 'Costas'] },
+            6: { name: 'Sábado: Inferiores & Core', cats: ['Inferior', 'Core'] },
+            0: { name: 'Domingo: Descanso Ativo', cats: ['Core', 'Antebraço'] }
+        };
+
+        function showWorkout(btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const day = new Date().getDay(); // 0 is Sunday, 1 is Monday...
+            const plan = workoutPlan[day];
+
+            const grid = document.getElementById('grid');
+            grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px; padding: 20px; background: var(--card); border-radius: var(--radius); border: 1px solid var(--primary);">
             <h2 style="color: var(--primary); margin: 0; font-weight: 900; font-size: 1.8rem;">💪 Treino de Hoje</h2>
             <p style="color: #ddd; margin: 5px 0 0 0; font-size: 1.2rem;">${plan.name}</p>
         </div>`;
-        
-        let finalSet = [];
-        // Embaralha e seleciona 4 a 5 exercicios por grupo muscular para não ficar gigante
-        plan.cats.forEach(c => {
-            let catEx = data.filter(ex => ex.c === c);
-            // Simples randomização consistente
-            catEx.sort(() => 0.5 - Math.random());
-            finalSet.push(...catEx.slice(0, 5));
-        });
 
-        finalSet.forEach(ex => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `<strong>${ex.n}</strong>`;
-            card.onclick = () => openModal(ex);
-            grid.appendChild(card);
-        });
-    }
+            let finalSet = [];
+            // Embaralha e seleciona 4 a 5 exercicios por grupo muscular para não ficar gigante
+            plan.cats.forEach(c => {
+                let catEx = data.filter(ex => ex.c === c);
+                // Simples randomização consistente
+                catEx.sort(() => 0.5 - Math.random());
+                finalSet.push(...catEx.slice(0, 5));
+            });
 
-    function showCat(cat, btn) {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        if(btn) btn.classList.add('active');
-        const grid = document.getElementById('grid');
-        grid.innerHTML = '';
-        data.filter(ex => ex.c === cat).forEach(ex => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `<strong>${ex.n}</strong>`;
-            card.onclick = () => openModal(ex);
-            grid.appendChild(card);
-        });
-    }
+            finalSet.forEach(ex => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `<strong>${ex.n}</strong>`;
+                card.onclick = () => openModal(ex);
+                grid.appendChild(card);
+            });
+        }
+
+        function showCat(cat, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            const grid = document.getElementById('grid');
+            grid.innerHTML = '';
+            data.filter(ex => ex.c === cat).forEach(ex => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `<strong>${ex.n}</strong>`;
+                card.onclick = () => openModal(ex);
+                grid.appendChild(card);
+            });
+        }
 
         let currentEx = null;
-    let myWorkout = JSON.parse(localStorage.getItem('myWorkout') || '[]');
+        let userEmail = localStorage.getItem('userEmail');
+        let myWorkout = [];
 
-    function addToCustom() {
-        if(currentEx) {
-            if(!myWorkout.find(e => e.n === currentEx.n)) {
-                myWorkout.push(currentEx);
-                localStorage.setItem('myWorkout', JSON.stringify(myWorkout));
-                alert(currentEx.n + ' adicionado ao seu treino!');
+        function initAuth() {
+            if (userEmail) {
+                document.getElementById('login-modal').style.display = 'none';
+                document.getElementById('user-display').style.display = 'block';
+                document.getElementById('user-email').innerText = userEmail;
+                myWorkout = JSON.parse(localStorage.getItem('myWorkout_' + userEmail)) || [];
             } else {
-                alert('Este exercício já está no seu treino!');
+                document.getElementById('login-modal').style.display = 'flex';
+                document.getElementById('user-display').style.display = 'none';
             }
         }
-    }
 
-    function removeFromCustom(exName, event) {
-        if(event) event.stopPropagation();
-        myWorkout = myWorkout.filter(e => e.n !== exName);
-        localStorage.setItem('myWorkout', JSON.stringify(myWorkout));
-        showCustomWorkout(document.querySelector('.tab-btn[onclick*="showCustom"]'));
-    }
+        function login() {
+            const email = document.getElementById('email-input').value;
+            if (email.includes('@') && email.trim().length > 3) {
+                localStorage.setItem('userEmail', email.trim());
+                userEmail = email.trim();
+                initAuth();
+                const customBtn = document.querySelector('.tab-btn[onclick*="showCustomWorkout(this)"]');
+                if (customBtn) showCustomWorkout(customBtn);
+            } else {
+                alert('Por favor, informe um e-mail válido!');
+            }
+        }
 
-    function showCustomWorkout(btn) {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        if(btn) btn.classList.add('active');
-        const grid = document.getElementById('grid');
-        grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px; padding: 20px; background: var(--card); border-radius: var(--radius); border: 1px solid var(--primary);">
+        function logout() {
+            localStorage.removeItem('userEmail');
+            userEmail = null;
+            document.getElementById('email-input').value = '';
+            initAuth();
+            const homeBtn = document.querySelector('.tab-btn[onclick*="showWorkout(this)"]');
+            if (homeBtn) showWorkout(homeBtn);
+        }
+
+        function addToCustom() {
+            if (!userEmail) {
+                alert('Você precisa estar logado para montar seu treino!');
+                closeModal();
+                initAuth();
+                return;
+            }
+            if (currentEx) {
+                if (!myWorkout.find(e => e.n === currentEx.n)) {
+                    myWorkout.push(currentEx);
+                    localStorage.setItem('myWorkout_' + userEmail, JSON.stringify(myWorkout));
+                    alert(currentEx.n + ' adicionado ao seu treino!');
+                } else {
+                    alert('Este exercício já está no seu treino!');
+                }
+            }
+        }
+
+        function removeFromCustom(exName, event) {
+            if (event) event.stopPropagation();
+            myWorkout = myWorkout.filter(e => e.n !== exName);
+            localStorage.setItem('myWorkout_' + userEmail, JSON.stringify(myWorkout));
+            showCustomWorkout(document.querySelector('.tab-btn[onclick*="showCustomWorkout(this)"]'));
+        }
+
+        function showCustomWorkout(btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            const grid = document.getElementById('grid');
+            grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px; padding: 20px; background: var(--card); border-radius: var(--radius); border: 1px solid var(--primary);">
                 <h2 style="color: var(--primary); margin: 0; font-weight: 900; font-size: 1.8rem;">⭐ Meu Treino Personalizado</h2>
                 <p style="color: #ddd; margin: 5px 0 0 0; font-size: 1.2rem;">Crie e acesse sua própria lista</p>
             </div>`;
-        
-        if(myWorkout.length === 0) {
-            grid.innerHTML += `<p style="grid-column: 1 / -1; text-align: center; color: #888; font-size:1.1rem; padding: 20px;">Abra algum exercício e clique em 'ADICIONAR AO MEU TREINO' para ele aparecer aqui.</p>`;
-            return;
+
+            if (myWorkout.length === 0) {
+                grid.innerHTML += `<p style="grid-column: 1 / -1; text-align: center; color: #888; font-size:1.1rem; padding: 20px;">Abra algum exercício e clique em 'ADICIONAR AO MEU TREINO' para ele aparecer aqui.</p>`;
+                return;
+            }
+
+            myWorkout.forEach(ex => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.position = 'relative';
+                card.innerHTML = `<button onclick="removeFromCustom('${ex.n}', event)" style="position:absolute; top:-10px; right:-10px; background: #e60000; color:white; border:none; border-radius:50%; width:30px; height:30px; font-weight:bold; cursor:pointer; z-index: 10;" title="Remover">X</button><strong>${ex.n}</strong>`;
+                card.onclick = () => openModal(ex);
+                grid.appendChild(card);
+            });
         }
 
-        myWorkout.forEach(ex => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.style.position = 'relative';
-            card.innerHTML = `<button onclick="removeFromCustom('${ex.n}', event)" style="position:absolute; top:-10px; right:-10px; background: #e60000; color:white; border:none; border-radius:50%; width:30px; height:30px; font-weight:bold; cursor:pointer; z-index: 10;" title="Remover">X</button><strong>${ex.n}</strong>`;
-            card.onclick = () => openModal(ex);
-            grid.appendChild(card);
-        });
-    }
+        function openModal(ex) {
+            currentEx = ex;
+            const goal = document.getElementById('goal').value;
+            document.getElementById('m-name').innerText = ex.n;
+            document.getElementById('m-img').src = `./assets/exercises/${ex.f}`;
 
-    function openModal(ex) {
-        currentEx = ex;
-        const goal = document.getElementById('goal').value;
-        document.getElementById('m-name').innerText = ex.n;
-        document.getElementById('m-img').src = `./assets/exercises/${ex.f}`;
-        
-        let sets = 4;
-        let desc = "SUGESTÃO: 4 x 10 REPS";
-        if(goal === 'queima') { sets = 4; desc = "SUGESTÃO: 4 x 20 REPS"; }
-        else if(goal === 'forca') { sets = 5; desc = "SUGESTÃO: 5 x 5 REPS"; }
-        
-        document.getElementById('m-reps').innerText = desc;
-        
-        const checksC = document.getElementById('m-checks');
-        checksC.innerHTML = '';
-        for(let i=0; i<sets; i++) {
-            let chk = document.createElement('div');
-            chk.className = 'set-check';
-            chk.onclick = function() { this.classList.toggle('checked'); };
-            checksC.appendChild(chk);
+            let sets = 4;
+            let desc = "SUGESTÃO: 4 x 10 REPS";
+            if (goal === 'queima') { sets = 4; desc = "SUGESTÃO: 4 x 20 REPS"; }
+            else if (goal === 'forca') { sets = 5; desc = "SUGESTÃO: 5 x 5 REPS"; }
+
+            document.getElementById('m-reps').innerText = desc;
+
+            const checksC = document.getElementById('m-checks');
+            checksC.innerHTML = '';
+            for (let i = 0; i < sets; i++) {
+                let chk = document.createElement('div');
+                chk.className = 'set-check';
+                chk.onclick = function () { this.classList.toggle('checked'); };
+                checksC.appendChild(chk);
+            }
+
+            document.getElementById('modal').style.display = 'flex';
         }
-        
-        document.getElementById('modal').style.display = 'flex';
-    }
 
-    function closeModal() { document.getElementById('modal').style.display = 'none'; clearInterval(timerInt); }
+        function closeModal() { document.getElementById('modal').style.display = 'none'; clearInterval(timerInt); }
 
-    let timerInt;
-    function startRest() {
-        let t = 45;
-        const disp = document.getElementById('timer');
-        const btn = document.getElementById('btn-timer');
-        btn.disabled = true;
-        clearInterval(timerInt);
-        timerInt = setInterval(() => {
-            t--;
-            disp.innerText = `00:${t < 10 ? '0'+t : t}`;
-            if(t <= 0) { clearInterval(timerInt); alert("HORA DE VOLTAR AO TREINO!"); btn.disabled = false; disp.innerText = "00:45"; }
-        }, 1000);
-    }
+        let timerInt;
+        function startRest() {
+            let t = 45;
+            const disp = document.getElementById('timer');
+            const btn = document.getElementById('btn-timer');
+            btn.disabled = true;
+            clearInterval(timerInt);
+            timerInt = setInterval(() => {
+                t--;
+                disp.innerText = `00:${t < 10 ? '0' + t : t}`;
+                if (t <= 0) { clearInterval(timerInt); alert("HORA DE VOLTAR AO TREINO!"); btn.disabled = false; disp.innerText = "00:45"; }
+            }, 1000);
+        }
 
-    updateGoal();
-    showWorkout(document.querySelector('.tab-btn'));
-</script>
+        updateGoal();
+        initAuth();
+        showWorkout(document.querySelector('.tab-btn'));
+    </script>
 </body>
+
 </html>
